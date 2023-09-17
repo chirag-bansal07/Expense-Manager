@@ -1,23 +1,23 @@
-import { useState } from "react";
-import'./App.css';
-import Expense from "./components/expenses/Expenses";
-import NewExpense from "./components/new Expense/NewExpense";
-const DummyExpenses=[
-  {name:"carFinance",cost:20000,date: new Date(2020, 7, 25),id: 1},
-  {name: 'education',cost:300000,date: new Date(2020, 7, 15),id: 2},
-  {name: 'food',cost:2000,date: new Date(2020, 7, 19),id: 3}]
+import logo from './logo.svg';
+import './App.css';
+
 function App() {
-  const [Expenses, setExpense]=useState(DummyExpenses)
-  function NewExpenseReciverHandler(newExpenseData) {
-    setExpense((prevExpences) => {
-      return [newExpenseData, ...prevExpences];
-    });
-  }
   return (
     <div className="App">
-      <h1>Expenses Manager</h1>
-      <NewExpense NewExpenseRecived={NewExpenseReciverHandler}/>
-      <Expense items={Expenses} />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
